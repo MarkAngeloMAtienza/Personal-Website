@@ -219,15 +219,7 @@
                     <a href="https://www.instagram.com/mark_atnz?igsh=MXF6dG4xdDU3aXh4eA%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
 
                 </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-            </div>
+                
         </div>
     </div>
 
@@ -254,23 +246,6 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("active-tab");
 }
 </script>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwGG3BL9qbaPA7YOYzzTD-KDmHjUofaIdMDHSrP6Kk1UHHR89H9teHsU0TrChq-Mw1e/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent succesfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+
 </body>
 </html>
